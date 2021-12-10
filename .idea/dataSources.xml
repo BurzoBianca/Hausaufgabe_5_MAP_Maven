@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Datenbank" uuid="562ad617-2225-4d48-bb9a-e706857d65db">
+    <data-source source="LOCAL" name="Database" uuid="46232cff-1146-485e-ad12-e98531de9ddc">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/hausaufgabe_5_map</jdbc-url>
+      <jdbc-url>jdbc:mysql://127.0.0.1:3306/hsg_5_map</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

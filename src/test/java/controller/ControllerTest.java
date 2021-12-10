@@ -106,7 +106,7 @@ class ControllerTest {
         }
 
         //cand cursul nu exista
-        Course course4  = new Course(14, "OOP", 11, 2, 5);
+        Course course4  = new Course(14, "OOP", 12, 2, 5);
         List<Integer> expectedStudents3 = new ArrayList<>(List.of());
         try{
             controller.register(course4,student1);

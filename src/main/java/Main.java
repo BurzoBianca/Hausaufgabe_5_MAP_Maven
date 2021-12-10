@@ -7,8 +7,8 @@ import java.sql.*;
 
 public class Main {
 
-    static final String DB_URL = "jdbc:mysql://localhost:3306/hausaufgabe_5_map?enabledTLSProtocols=TLSv1.2";
-    static final String USER = "root";
+    static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/hsg_5_map?autoReconnect=true&useSSL=false";
+    static final String USER = "BurzoBianca";
     static final String PASS = "Biancaare3pene!";
 
     public static void main(String[] args) throws IOException, SQLException, Exception_Input {
@@ -22,7 +22,7 @@ public class Main {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
- /*
+
         Statement stmt = connection.createStatement();
         TeacherRepo_JDBC teacherRepo_jdbc = new TeacherRepo_JDBC(stmt);
         StudentRepo_JDBC studentRepo_jdbc = new StudentRepo_JDBC(stmt);
@@ -58,7 +58,7 @@ public class Main {
         System.out.println(studentRepo_jdbc.getAll());
         System.out.println(courseRepo_jdbc.getAll());
 
-
+/*
         Conexiune con = new Conexiune();
         Connection conn = con.connection();
         Statement statement = conn.createStatement();
