@@ -26,7 +26,11 @@ public class Main {
         statement.executeUpdate("DELETE FROM course;");
         statement.executeUpdate("INSERT INTO course VALUES (1,'MAP',11,2, 5), (2, 'BD', 11, 2, 6), (3,'LP', 12, 2, 6)");
         statement.executeUpdate("DELETE FROM student;");
-        statement.executeUpdate("INSERT INTO student VALUES (1,'Catalina','Vasiu', 30), (2,'Victor', 'Santa', 30), (3,'Darius', 'Oros', 30)");
+        statement.executeUpdate("INSERT INTO student VALUES (1,'Catalina','Vasiu', 0), (2,'Victor', 'Santa', 0), (3,'Darius', 'Oros', 0)");
+        statement.executeUpdate("INSERT INTO enrolled_students VALUES (1,2), (2,1), (3,3)");
+        statement.executeUpdate("DELETE FROM teacher;");
+        statement.executeUpdate("INSERT INTO teacher VALUES (11,'Carmen','Matei'), (12,'Cornelia', 'Ignat')");
+
     }
 
     public static void main(String[] args){
