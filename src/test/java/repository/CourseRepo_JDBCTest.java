@@ -50,7 +50,7 @@ public class CourseRepo_JDBCTest {
 
             resetDatabase(stmt);
 
-            courseRepo_jdbc = new CourseRepo_JDBC((Statement) connection);
+            courseRepo_jdbc = new CourseRepo_JDBC(connection);
 
             course1 = courseRepo_jdbc.getAll().get(0);
             course2 = courseRepo_jdbc.getAll().get(1);

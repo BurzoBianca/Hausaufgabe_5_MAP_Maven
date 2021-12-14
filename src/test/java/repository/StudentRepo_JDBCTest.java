@@ -42,7 +42,7 @@ public class StudentRepo_JDBCTest {
 
             resetDatabase(statement);
 
-            studentRepo_jdbc = new StudentRepo_JDBC((Statement) connection);
+            studentRepo_jdbc = new StudentRepo_JDBC(connection);
 
             student1 = this.studentRepo_jdbc.getAll().get(0);
             student2 = this.studentRepo_jdbc.getAll().get(1);

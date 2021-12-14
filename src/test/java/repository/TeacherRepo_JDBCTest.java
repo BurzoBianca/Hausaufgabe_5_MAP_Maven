@@ -43,7 +43,7 @@ public class TeacherRepo_JDBCTest {
 
             resetDatabase(stmt);
 
-            teacherRepo_jdbc = new TeacherRepo_JDBC((Statement) connection);
+            teacherRepo_jdbc = new TeacherRepo_JDBC(connection);
 
             teacher1 = teacherRepo_jdbc.getAll().get(0);
             teacher2 = teacherRepo_jdbc.getAll().get(1);

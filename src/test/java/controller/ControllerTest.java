@@ -54,9 +54,9 @@ class ControllerTest {
 
             resetDatabase(stmt);
 
-            teacherRepo_jdbc = new TeacherRepo_JDBC(stmt);
-            studentRepo_jdbc = new StudentRepo_JDBC(stmt);
-            courseRepo_jdbc = new CourseRepo_JDBC(stmt);
+            teacherRepo_jdbc = new TeacherRepo_JDBC(con);
+            studentRepo_jdbc = new StudentRepo_JDBC(con);
+            courseRepo_jdbc = new CourseRepo_JDBC(con);
 
             controller = new Controller(courseRepo_jdbc,studentRepo_jdbc,teacherRepo_jdbc);
             teacher1 = teacherRepo_jdbc.getAll().get(0);

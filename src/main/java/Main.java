@@ -4,6 +4,15 @@ import repository.*;
 
 import java.io.IOException;
 import java.sql.*;
+import view.ConsoleView;
+import com.mysql.jdbc.*;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+
+import java.sql.Statement;
+import java.sql.Connection;
+
 
 public class Main {
 
@@ -11,6 +20,36 @@ public class Main {
     static final String USER = "BurzoBianca";
     static final String PASS = "Biancaare3pene!";
 
+    public static void resetDatabase(Statement statement) throws SQLException {
+        statement.executeUpdate("DELETE FROM enrolled_students;");
+        statement.executeUpdate("UPDATE student SET totalECTS = " + 0 + ";");
+        statement.executeUpdate("DELETE FROM course;");
+        statement.executeUpdate("INSERT INTO course VALUES (1,'MAP',11,2, 5), (2, 'BD', 11, 2, 6), (3,'LP', 12, 2, 6)");
+        statement.executeUpdate("DELETE FROM student;");
+        statement.executeUpdate("INSERT INTO student VALUES (1,'Catalina','Vasiu', 30), (2,'Victor', 'Santa', 30), (3,'Darius', 'Oros', 30)");
+    }
+
+    public static void main(String[] args){
+        try{
+            Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
+            Statement statement = connection.createStatement();
+
+            resetDatabase(statement);
+
+            TeacherRepo_JDBC teacherRepo_jdbc = new TeacherRepo_JDBC(connection);
+            StudentRepo_JDBC studentRepo_jdbc = new StudentRepo_JDBC(connection);
+            CourseRepo_JDBC courseRepo_jdbc = new CourseRepo_JDBC(connection);
+
+            Controller controller = new Controller(courseRepo_jdbc,studentRepo_jdbc,teacherRepo_jdbc);
+
+            ConsoleView view = new ConsoleView(controller);
+            view.main_menu();
+
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+
+        /*
     public static void main(String[] args) throws IOException, SQLException, Exception_Input {
 
         Connection connection = null;
